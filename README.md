@@ -160,10 +160,10 @@ spring.jpa.properties.jakarta.persistence.schema-generation.scripts.create-sourc
 
 ## 🧪 Load Sample Test Data
 
-After starting the database, you can populate it with demo clients by executing:
+After starting the database, you can populate it with demo customers by executing:
 
 ```bash
-psql -h localhost -p 5544 -U postgres -d client_microservice -f src/main/resources/db/test-data.sql
+psql -h localhost -p 5544 -U postgres -d customer_microservice -f src/main/resources/db/test-data.sql
 
 ```
 
