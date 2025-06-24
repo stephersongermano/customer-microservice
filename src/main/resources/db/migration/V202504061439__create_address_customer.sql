@@ -31,4 +31,4 @@ CREATE TABLE
         is_primary BOOLEAN NOT NULL
     );
 
-ALTER TABLE address ADD CONSTRAINT fk_customer_id FOREIGN KEY (customer_id) REFERENCES customer (id) ON DELETE CASCADE;
+ALTER TABLE addresses ADD CONSTRAINT fk_customer_id FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE CASCADE;
