@@ -12,6 +12,7 @@ import dev.stepherson.customer.application.dto.PhoneNumberUpdateResponse;
 import dev.stepherson.customer.application.mapper.CustomerMapper;
 import dev.stepherson.customer.domain.entity.Customer;
 import dev.stepherson.customer.domain.repository.CustomerRepository;
+import dev.stepherson.customer.domain.service.CustomerService;
 import dev.stepherson.customer.exception.DocumentAlreadyExistsException;
 import dev.stepherson.customer.exception.IdNotFoundExcepiton;
 import dev.stepherson.customer.exception.UnregisteredDocument;
@@ -19,7 +20,7 @@ import dev.stepherson.customer.util.DocumentMaskingUtil;
 import jakarta.transaction.Transactional;
 
 @Service
-public class CustomerServiceImpl {
+public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
     private final CustomerMapper customerMapper;
@@ -29,6 +30,7 @@ public class CustomerServiceImpl {
         this.customerMapper = customerMapper;
     }
 
+    @Override
     @Transactional
     public CustomerResponse create(CustomerRequest request) {
         Optional<Customer> existingCustomer = this.customerRepository.findByDocument(request.getDocument());
@@ -44,6 +46,7 @@ public class CustomerServiceImpl {
         return this.customerMapper.toCustomerResponse(customer);
     }
 
+    @Override
     @Transactional
     public CustomerResponse findByDocument(String document) {
         Customer customer = this.customerRepository.findByDocument(document)
@@ -52,6 +55,7 @@ public class CustomerServiceImpl {
         return this.customerMapper.toCustomerResponse(customer);
     }
 
+    @Override
     @Transactional
     public CustomerResponse findById(UUID id) {
         Customer customer = this.customerRepository.findById(id).orElseThrow(() -> new IdNotFoundExcepiton(id));
@@ -59,6 +63,7 @@ public class CustomerServiceImpl {
         return this.customerMapper.toCustomerResponse(customer);
     }
 
+    @Override
     @Transactional
     public EmailUpdateResponse updateEmail(UUID id, String email) {
         Customer customer = this.customerRepository.findById(id).orElseThrow(() -> new IdNotFoundExcepiton(id));
@@ -70,6 +75,7 @@ public class CustomerServiceImpl {
         return this.customerMapper.toEmailUpdateResponse(customer);
     }
 
+    @Override
     @Transactional
     public PhoneNumberUpdateResponse updatePhoneNumber(UUID id, String phoneNumber) {
         Customer customer = this.customerRepository.findById(id).orElseThrow(() -> new IdNotFoundExcepiton(id));
@@ -82,6 +88,7 @@ public class CustomerServiceImpl {
 
     }
 
+    @Override
     @Transactional
     public void delete(UUID id) {
         Customer customer = this.customerRepository.findById(id).orElseThrow(() -> new IdNotFoundExcepiton(id));

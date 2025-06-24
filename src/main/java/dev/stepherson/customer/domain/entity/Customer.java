@@ -28,7 +28,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "customer")
+@Table(name = "customers")
 @SQLDelete(sql = "UPDATE customer SET deleted = true WHERE id = ?")
 @SQLRestriction("deleted = false")
 public class Customer {

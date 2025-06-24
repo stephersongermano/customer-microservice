@@ -2,7 +2,7 @@ SET
     client_encoding TO utf8;
 
 CREATE TABLE
-    customer (
+    customers (
         id UUID PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    address (
+    addresses (
         id UUID PRIMARY KEY,
         customer_id UUID NOT NULL,
         address_type VARCHAR(50) NOT NULL,

@@ -1,6 +1,6 @@
 -- Insert customer 1: Ana Carolina Mendes (PF)
 INSERT INTO
-    customer (
+    customers (
         id,
         name,
         email,
@@ -27,7 +27,7 @@ VALUES
     );
 
 INSERT INTO
-    address (
+    addresses (
         id,
         customer_id,
         address_type,
@@ -73,7 +73,7 @@ VALUES
 
 -- Insert customer 2: Lucas Ferreira Costa (PF)
 INSERT INTO
-    customer (
+    customers (
         id,
         name,
         email,
@@ -100,7 +100,7 @@ VALUES
     );
 
 INSERT INTO
-    address (
+    addresses (
         id,
         customer_id,
         address_type,
@@ -132,7 +132,7 @@ VALUES
 
 -- Insert customer 3: Mariana Oliveira Souza (PF)
 INSERT INTO
-    customer (
+    customers (
         id,
         name,
         email,
@@ -159,7 +159,7 @@ VALUES
     );
 
 INSERT INTO
-    address (
+    addresses (
         id,
         customer_id,
         address_type,
@@ -205,7 +205,7 @@ VALUES
 
 -- Insert customer 4: Tech Solutions LTDA (PJ)
 INSERT INTO
-    customer (
+    customers (
         id,
         name,
         email,
@@ -232,7 +232,7 @@ VALUES
     );
 
 INSERT INTO
-    address (
+    addresses (
         id,
         customer_id,
         address_type,
@@ -264,7 +264,7 @@ VALUES
 
 -- Insert customer 5: Global Imports S/A (PJ)
 INSERT INTO
-    customer (
+    customers (
         id,
         name,
         email,
@@ -291,7 +291,7 @@ VALUES
     );
 
 INSERT INTO
-    address (
+    addresses (
         id,
         customer_id,
         address_type,
